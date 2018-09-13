@@ -27,7 +27,7 @@ app.get('/*', (req, res) => {
         ssrMode: true,
         link: new HttpLink({
             fetch,
-            uri: 'https://api.graph.cool/simple/v1/cjlpogbhf1k9k0178tdc2kh41'
+            uri: process.env.GRAPHQL_ENDPOINT
         }),
         headers: {
             cookie: req.header('Cookie'),
@@ -55,8 +55,10 @@ app.get('/*', (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log('app is running!')
+const port = process.env.PORT || 3000
+
+app.listen(port, () => {
+    console.log('app is running! go to http://localhost:' + port)
 })
 
 const Html = ({ content, state }) => {

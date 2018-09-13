@@ -11,7 +11,7 @@ import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-const httpLink = new HttpLink({ uri: 'https://api.graph.cool/simple/v1/cjlpogbhf1k9k0178tdc2kh41' })
+const httpLink = new HttpLink({ uri: process.env.GRAPHQL_ENDPOINT })
 
 const client = new ApolloClient({
     link: httpLink,
