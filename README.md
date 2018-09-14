@@ -47,7 +47,7 @@ type Post @model {
 }
 ```
 
-* inside `server/graphql-service`, run `graphcool deploy` to deploy your new Graphcool service.
+* inside `server/graphcool-service`, run `graphcool deploy` to deploy your new Graphcool service.
 
 * copy the output's Simple API endpoint, it will be used on ApolloClient instances.
 
